@@ -17,7 +17,7 @@ class Grade(models.TextChoices):
 
 class Resume(models.Model):
 
-    user = models.OneToOneField(User, verbose_name='пользователь')
+    user = models.OneToOneField(User, verbose_name='пользователь', on_delete=models.CASCADE)
     status = models.CharField(
         max_length=2,
         choices=ResumeStatus.choices,
