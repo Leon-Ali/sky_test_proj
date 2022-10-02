@@ -29,11 +29,26 @@ class Resume(models.Model):
         choices=Grade.choices,
         verbose_name='грейд',
     )
-    specialty = models.CharField(max_length=250, verbose_name='специальность')
-    salary = models.FloatField(verbose_name='зарплата')
-    education = models.TextField(verbose_name='образование')
+    specialty = models.CharField(
+        max_length=250,
+        verbose_name='специальность',
+    )
+    salary = models.FloatField(
+        verbose_name='зарплата',
+        null=True,
+        blank=True,
+    )
+    education = models.TextField(
+        verbose_name='образование',
+        null=True,
+        blank=True,
+    )
     experience = models.TextField(verbose_name='опыт')
-    portfolio = models.URLField(verbose_name='портфолио')
+    portfolio = models.URLField(
+        verbose_name='портфолио',
+        null=True,
+        blank=True,
+    )
     title = models.CharField(max_length=250, verbose_name='название')
     phone = PhoneNumberField(blank=True, verbose_name='телефон')
     email = models.EmailField(verbose_name='email')
