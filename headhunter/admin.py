@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from headhunter.models import Resume
+
+admin.site.register(Resume)
